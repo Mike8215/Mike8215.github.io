@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+
+    <title>金魚都能懂的:選單</title>
+    <style>
+        @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+        @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background-color: #546377;
+        }
+
+        .side-menu {
+            position: relative;
+            width: 300px;
+            height: 100%;
+            padding: 50px 0;
+            box-sizing: border-box;
+            background-image: linear-gradient(0deg, #3381b0, #c2196c);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 6px 0px 10px hsla(240, 40%, 20%, .6);
+            transform: translate(-100%);
+            transition: .3s;
+        }
+
+        .side-menu form {
+            display: flex;
+            margin: 0 10px 50px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .side-menu form input,
+        .side-menu form button {
+            border: none;
+            background-color: transparent;
+            color: #fff;
+            padding: 5px 10px;
+        }
+
+        .side-menu form input {
+            width: 230px;
+        }
+
+        .side-menu form button {
+            width: 50px;
+        }
+
+        .side-menu form input:focus,
+        .side-menu form button:focus {
+            outline: none;
+        }
+
+        .side-menu label {
+            position: absolute;
+            width: 40px;
+            height: 80px;
+            background-color: black;
+            color: white;
+            right: -40px;
+            top: 0;
+            line-height: 80px;
+            text-align: center;
+            font-size: 30px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        #side-menu-switch {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        #side-menu-switch:checked+.side-menu {
+            transform: translate(0);
+        }
+
+        #side-menu-switch:checked+.side-menu label .fa {
+            transform: scale(-1);
+        }
+
+        .nav a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav li {
+            position: relative;
+        }
+
+        .nav li+li a::before {
+            content: '';
+            position: absolute;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            left: 10px;
+            right: 10px;
+            top: 0;
+        }
+
+        .nav a .fa {
+            margin-right: -1.0em;
+            transform: scale(0);
+            transition: 0.25s;
+        }
+
+        .nav li:hover .fa {
+            margin-right: 0em;
+            transform: scale(1);
+        }
+
+        .nav li:hover>a {
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .nav ul {
+            display: none;
+            position: absolute;
+            left: 100%;
+            width: 300px;
+            top: 6px;
+            background-color: rgba(6, 36, 119, 0.2);
+            box-shadow: 5px 5px 10px hsla(240, 40%, 20%, .6);
+        }
+
+        .nav li:hover > ul {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" id="side-menu-switch">
+
+    <div class="side-menu">
+        <form>
+            <input type="serch" placeholder="請輸入關鍵字">
+            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+        <ul class="nav">
+            <li>
+                <a href="#">
+                    <i class="fa fa-user-secret" aria-hidden="true"></i>鐵人賽
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">安</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">安安</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">安安安</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">安安安安</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-users" aria-hidden="true"></i>暴力班
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">嗨</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">嗨嗨</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">嗨嗨嗨</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">嗨嗨嗨嗨</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>RWD~醬子
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">HI!</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">HI! HI!</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">HI! HI! HI!</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">HI! HI! HI! HI!</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-globe" aria-hidden="true"></i>金魚網頁
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">讚</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">讚讚</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">讚讚讚</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">讚讚讚讚</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-css3" aria-hidden="true"></i>金魚切版
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">棒</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">棒棒</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">棒棒棒</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">棒棒棒棒</a>
+                        <ul>
+                            <li><a href="#">DAY1</a></li>
+                            <li><a href="#">DAY2</a></li>
+                            <li><a href="#">DAY3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <label for="side-menu-switch">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </label>
+    </div>
+
+</body>
+
+</html>

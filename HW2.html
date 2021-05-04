@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperion-Premium WordPress site</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        a{
+            text-decoration:none;
+        }
+        .wrap {
+            max-width: 100%;
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .wrap img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+
+        .wrap .title {
+            max-width: 100%;
+            width: 100%;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.212);
+            top: 0;
+        }
+
+        .wrap .title img {
+            width: 160px;
+            margin: 35px 0 0;
+        }
+
+        .wrap .title .item {
+            display: flex;
+            justify-content: center;
+            font-size: 9px;
+            color: white;
+        }
+
+        .item h2 {
+            margin: 20px 20px 30px;
+        }
+
+        .item a {
+            color: white;
+        }
+
+        .wrap .box {
+            max-width: 100%;
+            width: 1000px;
+            position: absolute;
+            top: 33%;
+            left: 20%;
+            margin-left: 0;
+            text-align: left;
+            color: white;
+        }
+
+        .box h3 {
+            font-size: 120px;
+        }
+
+        .box p {
+            margin: 60px 0 20px 0;
+        }
+        .box span{
+            color: white;
+        }
+
+        .wrap .botton {
+            width: 1240px;
+            position: absolute;
+            bottom: 30px;
+            left: 8%;
+            display: flex;
+            text-align: center;
+            color: white;
+        }
+
+        .item-title {
+            width: 280px;
+            margin: 20px;
+            text-align: left;
+            margin: 40px;
+            font-size: 18px;
+        }
+
+        .item-title h3 {
+            display: inline-block;
+            margin: 0 0 12px 5px;
+        }
+
+        .item-title img {
+            width: 35px;
+            display: inline-block;
+        }
+
+        .wrap-plan {
+            margin: 60px 0;
+            width: 100%;
+            max-width: 100%;
+            height: 150px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .wrap-plan h3 {
+            padding: 0 60px;
+            width: 330px;
+            text-align: left;
+            justify-content: center;
+            font-size: 40px;
+            color: rgba(3, 3, 3, 0.616);
+        }
+
+        .wrap-plan .txt {
+            padding: 0 0 0 40px;
+            text-align: left;
+            width: 600px;
+            height: 150px;
+            border-left: 2px solid rgba(3, 3, 3, 0.151);
+            column-count: 2;
+            column-gap: 30px;
+        }
+
+        .wrap-plan .txt p:first-child::first-letter {
+            color: #c2b697;
+            font-size: 50px;
+        }
+
+        .wrap-plan .txt p {
+            color: rgba(3, 3, 3, 0.609);
+            font-size: 18px;
+        }
+
+        .wrap-power {
+            width: 100%;
+            max-width: 100%;
+            height: 250px;
+            background-color: #c2b697;
+            color: white;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrap-power .txt-power {
+            width: 66.66666%;
+            text-align: left;
+            padding: 0 0 0 80px;
+        }
+
+        .txt-power h3 {
+            font-size: 40px;
+        }
+
+        .txt-power p {
+            font-size: 19px;
+        }
+
+        .wrap-power .get {
+            width: 33.333333%;
+        }
+
+        .get a {
+            color: black;
+            background-color: white;
+            padding: 22px 30px;
+            border-radius: 8px;
+            font-size: 15px;
+            border: white solid 2px;
+        }
+
+        .wrap-choose {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 0 80px;
+        }
+
+        .item-choose {
+            max-width: 100%;
+            width: 100%;
+            padding: 60px 0 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+        }
+
+        .item-choose h3 {
+            max-width: 100%;
+            width: 100%;
+            font-size: 30px;
+        }
+
+        span {
+            color: #c2b697;
+        }
+
+        .item-choose p {
+            max-width: 620px;
+            font-size: 14px;
+            padding: 20px 0 0;
+            color: rgba(3, 3, 3, 0.342);
+        }
+
+        .txt-choose {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+        }
+
+        .txt-choose img {
+            width: 240px;
+            margin: 0 30px;
+        }
+
+        .txt-right,
+        .txt-left {
+            margin: 80px 0;
+            width: 300px;
+            font-size: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .txt-left .VISIT,
+        .txt-left .SAVE,
+        .txt-left .EXPLORE {
+            text-align: right;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .VISIT-txt,
+        .SAVE-txt,
+        .EXPLORE-txt {
+            color: rgba(3, 3, 3, 0.342);
+        }
+
+        .VISIT-txt h6,
+        .SAVE-txt h6,
+        .EXPLORE-txt h6 {
+            color: #c2b697;
+        }
+
+        .txt-right .ORGANIZE,
+        .txt-right .COMMUNICATE,
+        .txt-right .SHARE {
+            text-align: left;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .ORGANIZE-txt,
+        .COMMUNICATE-txt,
+        .SHARE-txt {
+            color: rgba(3, 3, 3, 0.342);
+        }
+
+        .ORGANIZE-txt h6,
+        .COMMUNICATE-txt h6,
+        .SHARE-txt h6 {
+            color: #c2b697;
+        }
+
+        .txt-right img,
+        .txt-left img {
+            width: 50px;
+            border-radius: 50px;
+        }
+
+        .wrap-pic {
+            background-image: url(css.0318作業圖片/wrap-pic.jpeg);
+            max-width: 100%;
+            width: 100%;
+
+        }
+
+        .wrap-pic .item-bagrond {
+            padding: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: #3a3b3e;
+            opacity: 0.8;
+        }
+
+        .COMPANY,
+        .PROJECTS,
+        .BUSINESS,
+        .CLIENTS {
+            width: 80px;
+            text-align: center;
+            color: white;
+            font-size: 4px;
+        }
+
+        .num {
+            font-size: 40px;
+            margin: 15px 0 10px;
+        }
+
+        .wrap-pic img {
+            width: 50px;
+            opacity: 0.8;
+        }
+
+        .wrap-at {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .item-at {
+            margin: 80px 300px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+        }
+
+        .item-at h3 {
+            max-width: 100%;
+            width: 100%;
+            font-size: 30px;
+            text-align: left;
+        }
+
+        .at{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .at-txt {
+            margin: 20px 0;
+            width: 55%;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: left;
+            font-size: 14px;
+            color: rgba(3, 3, 3, 0.342);
+        }
+        .at-txt li {
+            color: black;
+            margin: 10px;
+            list-style: initial;
+        }
+        .at-box{
+            width: 45%;
+        }
+
+        .wrap-latestprojects{
+            width: 100%;
+            max-width: 100%;
+            background-color:#f7f7f7 ;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+        }
+        .title-latestprojects{
+            width: 100%;
+            max-width: 100%;
+            margin: 80px 0 0;
+            font-size: 20px;
+        }
+        .txt-latestprojects ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            text-align: center;            
+        }
+        .txt-latestprojects li{
+            margin: 30px 10px 100px;
+            font-size: 12px;            
+        }
+        .txt-latestprojects a{
+            color: #42474c7e;
+        }
+
+        .wrap-testimonials{
+            width: 100%;
+            max-width: 100%;
+            height: 240px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+        .wrap-testimonials h3{
+            width: 100%;
+            max-width: 100%;
+            margin: 80px 0 0;
+            font-size: 20px;
+        }
+
+        .wrap-offices{
+            width: 100%;
+            max-width: 100%;
+            height: 329px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            background-color: rgb(87, 69, 69);
+        }
+        .offices-pic{
+            width: 50%;
+            max-width: 50%;
+            background-color: #42474c;
+        }
+        .offices-txt{
+            width: 50%;
+            max-width: 50%;
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <img src="css.0318作業圖片/titleback.jpeg" alt="IMPERION">
+            <div class="title">
+                <h1>
+                    <a href="https://buildschool-mike.azurewebsites.net/hw2.html"><img src="css.0318作業圖片/title.png"
+                            alt="home"></a>
+                </h1>
+                <div class="item">
+                    <h2><a href="https://buildschool-mike.azurewebsites.net/hw2.html">HOME</a></h2>
+                    <h2><a href="javascrupt:void(0)">PAGES</a></h2>
+                    <h2><a href="javascrupt:void(0)">FEATURES</a></h2>
+                    <h2><a href="javascrupt:void(0)">NEWS</a></h2>
+                    <h2><a href="javascrupt:void(0)">SHOP</a></h2>
+                </div>
+            </div>
+            <div class="box">
+                <h3>The Power</h3>
+                <h4>OF IMAGINATION MAKES US INFINITE</h4>
+                <p><span>←</span>&nbsp;&nbsp;&nbsp;&nbsp;01/03&nbsp;&nbsp;&nbsp;&nbsp;<span>→</span></p>
+            </div>
+            <div class="botton">
+                <div class="item-title">
+                    <img src="css.0318作業圖片/DEVELOPMENT.jpg" alt="DEVELOPMENT">
+                    <h3>DEVELOPMENT</h3>
+                    <p>We work alongside national and international organizations.</p>
+                </div>
+                <div class="item-title">
+                    <img src="css.0318作業圖片/INTEGRATION.jpg" alt="INTEGRATION">
+                    <h3>INTEGRATION</h3>
+                    <p>Committed to conducting its business according to the highest...</p>
+                </div>
+                <div class="item-title">
+                    <img src="css.0318作業圖片/RESPONSIBILITY.jpg" alt="RESPONSIBILITY">
+                    <h3>RESPONSIBILITY</h3>
+                    <p>Committed to conducting its business according to the highest...</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrap-plan">
+        <h3>Looking for a First-Class Business Plan</h3>
+        <div class="txt">
+            <p>We’re a financial and consulting business company of professional thinkers, strategists, digital
+                innovators, designers and problem solvers (everyone gets a mention). Our sense of curiosity brings
+                thinkers, strategists, digital innovators, designers and problem solvers (everyone gets a mention). Our
+                sense of curiosity brings brands to life, gets them talking, and makes sure they’re heard above.
+            </p>
+        </div>
+    </div>
+
+    <div class="wrap-power">
+        <div class="txt-power">
+            <h3>Unleash Your Team’s Productive Power</h3>
+            <p>The truly scarce resources now are the time, the talent, and the energy of the people.</p>
+        </div>
+        <div class="get">
+            <a href="http://wptemplatetesting.com/floyd/imperion/events/"><strong>GET IN TOUCH</strong></a>
+        </div>
+    </div>
+
+    <div class="wrap-choose">
+        <div class="item-choose">
+            <h3>Why Traders <span class="choose-span">Choose Us</span></h3>
+            <p>With a community of over 400 million users (and a majority age group being 18 to 29), wouldn’t you want
+                to make sure you’re monitoring what people are posting on social networks? Especially if the demographic
+                of your audience falls in that age range.
+        </div>
+        <div class="txt-choose">
+            <div class="txt-left">
+                <div class="VISIT">
+                    <div class="VISIT-pic"><img src="css.0318作業圖片/phone1.jpg" alt="VISIT"></div>
+                    <div class="VISIT-txt">
+                        <h6>VISIT</h6>
+                        <p>Our values and ideals are our decision making guide.</p>
+                    </div>
+                </div>
+                <div class="SAVE">
+                    <div class="SAVE-pic"><img src="css.0318作業圖片/phone2.jpg" alt="SAVE"></div>
+                    <div class="SAVE-txt">
+                        <h6>SAVE</h6>
+                        <p>We only release our products when we feel they meet our standards.</p>
+                    </div>
+                </div>
+                <div class="EXPLORE">
+                    <div class="EXPLORE-pic"><img src="css.0318作業圖片/phone3.jpg" alt="EXPLORE"></div>
+                    <div class="EXPLORE-txt">
+                        <h6>EXPLORE</h6>
+                        <p>We rely on the same platform and tools our customers pay us for</p>
+                    </div>
+                </div>
+            </div>
+            <div class="txt-pic">
+                <img src="css.0318作業圖片/phone.png" alt="">
+            </div>
+            <div class="txt-right">
+                <div class="ORGANIZE">
+                    <div class="ORGANIZE-pic"><img src="css.0318作業圖片/phone4.jpg" alt="ORGANIZE"></div>
+                    <div class="ORGANIZE-txt">
+                        <h6>ORGANIZE</h6>
+                        <p>Beautiful products to help people with creative ideas succeed.</p>
+                    </div>
+                </div>
+                <div class="COMMUNICATE">
+                    <div class="COMMUNICATE-pic"><img src="css.0318作業圖片/phone5.jpg" alt="COMMUNICATE"></div>
+                    <div class="COMMUNICATE-txt">
+                        <h6>COMMUNICATE</h6>
+                        <p>Creative, stylish, and easy-to-manage online presence.</p>
+                    </div>
+                </div>
+                <div class="SHARE">
+                    <div class="SHARE-pic"><img src="css.0318作業圖片/phone6.jpg" alt="SHARE"></div>
+                    <div class="SHARE-txt">
+                        <h6>SHARE</h6>
+                        <p>Share stories and create an impactful online presence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap-pic">
+        <div class="item-bagrond">
+            <div class="COMPANY">
+                <div class="COMPANY-pic">
+                    <img src="css.0318作業圖片/bagrond-pic 1.jpg" alt="COMPANY ESTABLISHED">
+                </div>
+                <div class="COMPANY-txt">
+                    <p class="num">2007</p>
+                    <p>COMPANY ESTABLISHED</p>
+                </div>
+            </div>
+            <div class="PROJECTS">
+                <div class="PROJECTS-pic">
+                    <img src="css.0318作業圖片/bagrond-pic 2.jpg" alt="PROJECTS DONE">
+                </div>
+                <div class="PROJECTS-txt">
+                    <p class="num">426</p>
+                    <p>PROJECTS DONE</p>
+                </div>
+            </div>
+            <div class="BUSINESS">
+                <div class="BUSINESS-pic">
+                    <img src="css.0318作業圖片/bagrond-pic 3.jpg" alt="BUSINESS PARTHNERS">
+                </div>
+                <div class="BUSINESS-txt">
+                    <p class="num">45+</p>
+                    <p>BUSINESS PARTHNERS</p>
+                </div>
+            </div>
+            <div class="CLIENTS">
+                <div class="CLIENTS-pic">
+                    <img src="css.0318作業圖片/bagrond-pic 4.jpg" alt="HAPPY CLIENTS">
+                </div>
+                <div class="CLIENTS-txt">
+                    <p class="num">1510</p>
+                    <p>HAPPY CLIENTS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap-at">
+        <div class="item-at">
+            <h3>What We <span>Are Good At</span></h3>
+            <div class="at">
+                <div class="at-txt">
+                    <div>
+                        <p>With a community of over 400 million users (and a majority age group being 18 to 29),
+                            wouldn’t you want to make sure you’re monitoring what people are posting on social networks?
+                        </p>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Article and News research<a href=""></a></li>
+                            <li>Company and Industry Research</li>
+                            <li>Industry Research and Market Research</li>
+                            <li>Market Analysis Report</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="at-box">
+                    <div>
+                        <div>
+
+                        </div>
+                        <div class="at-strip">
+                            
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap-latestprojects">
+        <div class="title-latestprojects">
+            <h3>Our Latest <span>Projects</span></h3>
+        </div>
+        <div class="txt-latestprojects">
+            <ul>
+                <li><a href="javascript:void(0)">ALL</a></li>
+                <li><a href="javascript:void(0)">ADVANCED ANALYTICS</a></li>
+                <li><a href="javascript:void(0)">CORPORATE FINANCE</a></li>
+                <li><a href="javascript:void(0)">DIGITAL</a></li>
+                <li><a href="javascript:void(0)">ORGANIZATION</a></li>
+                <li><a href="javascript:void(0)">PRIVATE EQUITY</a></li>
+                <li><a href="javascript:void(0)">STRATEGY</a></li>
+                <li><a href="javascript:void(0)">STRATEGY & MARKETING</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="wrap-testimonials">
+        <div>
+            <h3>Clients <span>Testimonials</span></h3>
+        </div>
+        <div>
+        
+        </div>
+    </div>
+
+    <div class="wrap-offices">
+        <div class="offices-pic">
+
+        </div>
+        <div class="offices-txt">
+            <div>
+                <h3>Our <span>Offices</span></h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

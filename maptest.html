@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS2Mha_0HHaKYeF7zC1hgX8HcE_1ZzSRY&callback=initMap&libraries=&v=weekly"
+        async></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let map;
+        const CHU = { lat: 24.75980894155206, lng: 120.9530109551318 };
+        const test = [
+            { lat: 24.761500322306837, lng: 120.95989584310176 },
+            { lat: 24.753978948496407, lng: 120.95212816613687 },
+            { lat: 24.753121560914952, lng: 120.94976782230779 },
+        ];
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: CHU,
+                zoom: 15,
+            });
+
+            new google.maps.Marker({
+                position: CHU,
+                map,
+                title: "Hello World!",
+            });
+
+
+            test.forEach((item, index) => {
+                new google.maps.Marker({
+                    position: item,
+                    map,
+                    title: "Hello World!",
+                });
+            })
+        }
+
+        let region = "https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json";
+        let dosage = "https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%87%AA%E4%BE%86%E6%B0%B4%E7%94%A8%E9%87%8F.json";
+
+        let regionJson = [];
+        let dosageJson = [];
+        let resour = [];
+        let xhr_region = new XMLHttpRequest();
+        let xhr_resour = new XMLHttpRequest();
+
+        window.onload = function () {
+                xhr_region.onload = function () {
+                    regionJson = JSON.parse(this.response);
+                    regionJson.forEach((item, index) => {
+                        let coordinate = { lat: item.Lat, lng: item.Lng };
+                        let city = `${item.City},${item.District}`;
+                        // xlat.push(city);
+                        new google.maps.Marker({
+                            position: coordinate,
+                            map,
+                            title: city,
+                        });
+                    })
+                }
+                xhr_region.open('GET', region);
+                xhr_region.send();
+                
+
+                xhr_resour.onload = function () {
+                    dosageJson = JSON.parse(this.response);
+                    resour = dosageJson.TaiwanWaterExchangingData.StatisticofWaterResourcesClass.StatisticofWaterUsageClass.TheConsumptionOfWater;
+                }
+                xhr_resour.open('GET', dosage);
+                xhr_resour.send();
+        }
+    </script>
+</body>
+
+</html>
