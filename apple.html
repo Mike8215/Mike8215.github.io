@@ -10,12 +10,15 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>Apple</title>
     <style>
+        p {
+            margin: 0;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="container bg-dark">
+    <header class=" bg-dark">
+        <div class="container">
             <div class="row justify-content-center">
                 <!-- <button type="button" id="Mac" onclick="addMac()" class="my-3 mx-2 btn btn-outline-dark btn-lg">Mac</button> -->
                 <button type="button" id="iPad" class="my-3 mx-2 btn btn-outline-light btn-lg">iPad</button>
@@ -26,24 +29,25 @@
 
     <div class="container pb-5">
         <div class="row">
-            <div class="col-6">
-                <img class="w-100" id="productimg" src="" alt="">                
+            <div class="col-12 col-md-6">
+                <div class="mx-5">
+                    <img class="w-100" id="productimg" src="" alt="">
+                </div>
             </div>
-            <div class="col-6">
-                <h1 id="title"></h1> 
-                <p id="colortxt"></p>               
-                <div id="color"></div>
-                <p id="memorytxt"></p>                
-                <div id="memory"></div>
-                <p id="connecttxt"></p>                
-                <div id="connect"></div>
-                <p id="price"></p>
+            <div class="col-12 col-md-6 py-5">
+                <div class="mx-3">
+                    <h1 id="title" class="font-weight-bold"></h1>
+                    <p id="colortxt" class="font-weight-bold mt-3"></p>
+                    <div id="color" class="d-flex flex-wrap"></div>
+                    <p id="memorytxt" class="font-weight-bold mt-3"></p>
+                    <div id="memory" class="d-flex flex-wrap"></div>
+                    <p id="connecttxt" class="font-weight-bold mt-3"></p>
+                    <div id="connect" class="d-flex flex-wrap"></div>
+                    <p id="price" class="font-weight-bold"></p>
+                </div>
             </div>
         </div>
     </div>
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -57,18 +61,56 @@
         crossorigin="anonymous"></script>
 
     <script>
+        let product = [
+            {
+                iPhone11: {
+                    color: [
+                        { chcolor: '白色', rgb: 'rgb(249,246,239)', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-white-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566956148115' },
+                        { chcolor: '黑色', rgb: 'rgb(31,33,32)', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566956144418' },
+                        { chcolor: '綠色', rgb: 'rgb(173,224,205)', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-green-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566956144838' },
+                        { chcolor: '黃色', rgb: 'rgb(255,230,129)', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-yellow-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1568141245782' },
+                        { chcolor: '紫色', rgb: 'rgb(209,205,219)', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-purple-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566960958082' },
+                        { chcolor: '紅色', rgb: 'rgb(186,12,47)', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-red-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566956144763' }
+                    ],
+                    memory: [
+                        { gb: '64GB', price: 'NT$19,900' },
+                        { gb: '128GB', price: 'NT$21,500' },
+                        { gb: '256GB', price: 'NT$25,000' }
+                    ]
+                },
+
+                iPadair: {
+                    color: [
+                        { chcolor: '太空灰色', rgb: 'rgb(177,180,182)', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-spacegray-202009?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1598650646000' },
+                        { chcolor: '銀色', rgb: 'rgb(224,225,224)', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-silver-202009?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1598650645000' },
+                        { chcolor: '玫瑰金色', rgb: 'rgb(236,203,196)', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-gold-202009?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1598650644000' },
+                        { chcolor: '綠色', rgb: 'rgb(204,221,201)', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-green-202009?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1598650644000' },
+                        { chcolor: '天藍色', rgb: 'rgb(202,217,229)', img: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-blue-202009?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1598650644000' }
+                    ],
+                    memory: [
+                        { gb: '64GB', price: 'NT$18,900' },
+                        { gb: '256GB', price: 'NT$23,900' },
+                    ],
+                    connect: [
+                        { connect: 'Wi-Fi', price: '18900' },
+                        { connect: 'Wi-Fi+行動網路', price: '23900' }
+                    ]
+                }
+            }
+        ]
+
         let ipad = document.getElementById("iPad");
         let iphone = document.getElementById("iPhone");
-        ipad.addEventListener('click',function(){
+        ipad.addEventListener('click', function () {
             clear();
             addiPad();
-        },false);
-        iphone.addEventListener('click',function(){
+        }, false);
+        iphone.addEventListener('click', function () {
             clear();
             addiPhone();
-        },false);
+        }, false);
 
-        function clear(){
+        function clear() {
             let title = document.getElementById("title");
             title.innerHTML = "";
             let colortxt = document.getElementById("colortxt");
@@ -81,17 +123,18 @@
             memory.innerHTML = "";
             let price = document.getElementById("price");
             price.innerHTML = "";
+            let connect = document.getElementById("connect");
+            connect.innerHTML = "";
             let connecttxt = document.getElementById("connecttxt");
             connecttxt.innerHTML = "";
         }
 
-
-        function addiPad(){
+        function addiPad() {
             document.getElementById('iPad').disabled = true;
             document.getElementById('iPhone').disabled = false;
 
             let ipadimg = document.getElementById("productimg");
-            ipadimg.setAttribute("src","https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-202009?wid=886&hei=1070&fmt=jpeg&qlt=80&.v=1599066777000");
+            ipadimg.setAttribute("src", "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-202009?wid=886&hei=1070&fmt=jpeg&qlt=80&.v=1599066777000");
 
             let title = document.getElementById("title");
             title.innerText = "購買 iPad Air";
@@ -100,15 +143,103 @@
             let memorytxt = document.getElementById("memorytxt");
             memorytxt.innerText = "儲存裝置";
             let connecttxt = document.getElementById("connecttxt");
-            connecttxt.innerText = "連線能力";
+            // connecttxt.innerText = "連線能力";
+
+            let color = document.getElementById("color");
+            let memory = document.getElementById("memory");
+            let connect = document.getElementById("connect");
+            let colorarray = [];
+            let memoryarray = [];
+            let connectarray = [];
+            product.forEach((item, index) => {
+                colorarray = item.iPadair.color;
+                console.log(colorarray);
+                for (let i = 0; i < colorarray.length; i++) {
+                    let colorbtn = document.createElement('button');
+                    colorbtn.style.padding = '10px 80px';
+                    colorbtn.style.margin = '5px';
+                    colorbtn.style.borderRadius = '10px';
+                    colorbtn.style.flexWrap = 'wrap';
+                    colorbtn.style.textAlign = 'center';
+                    colorbtn.classList.add('background-color', 'bg-light');
+                    colorbtn.addEventListener('click', function () {
+                        let ipadimg = document.getElementById("productimg");
+                        ipadimg.setAttribute("src", `${colorarray[i].img}`);
+                    })
+
+                    let div = document.createElement('div');
+                    div.style.width = '80px';
+                    let colorrgb = document.createElement('div');
+                    colorrgb.style.margin = '0 auto';
+                    colorrgb.style.width = '40px';
+                    colorrgb.style.height = '40px';
+                    colorrgb.style.borderRadius = '40px';
+                    colorrgb.style.backgroundColor = colorarray[i].rgb;
+                    console.log(colorrgb);
+
+                    let colortxt = document.createElement('p');
+                    colortxt.innerText = colorarray[i].chcolor;
+
+                    div.append(colorrgb);
+                    div.append(colortxt);
+                    colorbtn.append(div);
+                    color.append(colorbtn);
+                }
+
+                memoryarray = item.iPadair.memory;
+                console.log(memoryarray);
+                for (let i = 0; i < memoryarray.length; i++) {
+                    let memorybtn = document.createElement('button');
+                    memorybtn.style.margin = '0 auto';
+                    memorybtn.style.padding = '18px 82px';
+                    memorybtn.style.margin = '5px';
+                    memorybtn.style.borderRadius = '10px';
+                    memorybtn.classList.add('background-color', 'bg-light');
+                    memorybtn.addEventListener('click', function () {
+                        let price = document.getElementById("price");
+                        price.innerText = "價格 : " + memoryarray[i].price;
+                        price.style.fontSize = '32px';
+                    })
+
+                    let gbtxt = document.createElement('div');
+                    gbtxt.innerHTML = `${memoryarray[i].gb}<br>${memoryarray[i].price}`;
+
+                    memorybtn.append(gbtxt);
+                    memory.append(memorybtn);
+                }
+
+                // connectarray = item.iPadair.connect;
+                // for (let i = 0; i < connectarray.length; i++) {
+                //     let connectbtn = document.createElement('button');
+                //     connectbtn.style.margin = '0 auto';
+                //     connectbtn.style.padding = '30px 60px';
+                //     connectbtn.style.margin = '5px';
+                //     connectbtn.style.borderRadius = '10px';
+                //     connectbtn.classList.add('background-color', 'bg-light');
+                //     connectbtn.addEventListener('click', function () {
+                //         let price = document.getElementById("price");
+                //         let num =parseInt(connectarray[i].price);
+                //         console.log(typeof num);
+                //         price.innerText = "價格 : NT$" + (num+4300);
+                //         price.style.fontSize = '32px';
+                //     })
+
+                //     let gbtxt = document.createElement('div');
+                //     gbtxt.innerText = connectarray[i].connect;
+                //     gbtxt.style.width = '120px';
+
+                //     connectbtn.append(gbtxt);
+                //     connect.append(connectbtn);
+                // }
+            })
         }
 
-        function addiPhone(){
+        function addiPhone() {
             document.getElementById('iPad').disabled = false;
             document.getElementById('iPhone').disabled = true;
 
             let iphoneimg = document.getElementById("productimg");
-            iphoneimg.setAttribute("src","https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-select-2019-family?wid=882&amp;hei=1058&amp;fmt=jpeg&amp;qlt=80&amp;.v=1567022175704");
+            iphoneimg.setAttribute("src", "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-select-2019-family?wid=882&amp;hei=1058&amp;fmt=jpeg&amp;qlt=80&amp;.v=1567022175704");
 
             let title = document.getElementById("title");
             title.innerText = "購買 iPhone11";
@@ -116,6 +247,66 @@
             colortxt.innerText = "選擇外觀。";
             let memorytxt = document.getElementById("memorytxt");
             memorytxt.innerText = "選擇儲存容量。";
+
+
+            let color = document.getElementById("color");
+            let memory = document.getElementById("memory");
+            let colorarray = [];
+            let memoryarray = [];
+            product.forEach((item, index) => {
+                colorarray = item.iPhone11.color;
+                console.log(colorarray);
+                for (let i = 0; i < colorarray.length; i++) {
+                    let colorbtn = document.createElement('button');
+                    colorbtn.style.padding = '10px 80px';
+                    colorbtn.style.margin = '5px';
+                    colorbtn.style.borderRadius = '10px';
+                    colorbtn.classList.add('background-color', 'bg-light');
+                    colorbtn.addEventListener('click', function () {
+                        let iphoneimg = document.getElementById("productimg");
+                        iphoneimg.setAttribute("src", `${colorarray[i].img}`);
+                    })
+
+                    let div = document.createElement('div');
+                    div.style.width = '80px';
+                    let colorrgb = document.createElement('div');
+                    colorrgb.style.margin = '0 auto';
+                    colorrgb.style.width = '40px';
+                    colorrgb.style.height = '40px';
+                    colorrgb.style.borderRadius = '40px';
+                    colorrgb.style.backgroundColor = colorarray[i].rgb;
+                    console.log(colorrgb);
+
+                    let colortxt = document.createElement('p');
+                    colortxt.innerText = colorarray[i].chcolor;
+
+                    div.append(colorrgb);
+                    div.append(colortxt);
+                    colorbtn.append(div);
+                    color.append(colorbtn);
+                }
+
+                memoryarray = item.iPhone11.memory;
+                console.log(memoryarray);
+                for (let i = 0; i < memoryarray.length; i++) {
+                    let memorybtn = document.createElement('button');
+                    memorybtn.style.padding = '18px 82px';
+                    memorybtn.style.margin = '5px';
+                    memorybtn.style.borderRadius = '10px';
+                    memorybtn.classList.add('background-color', 'bg-light');
+                    memorybtn.addEventListener('click', function () {
+                        let price = document.getElementById("price");
+                        price.innerText = "價格 : " + memoryarray[i].price;
+                        price.style.fontSize = '32px';
+                    })
+
+                    let gbtxt = document.createElement('div');
+                    gbtxt.innerHTML = `${memoryarray[i].gb}<br>${memoryarray[i].price}`;
+
+                    memorybtn.append(gbtxt);
+                    memory.append(memorybtn);
+                }
+            })
         }
 
     </script>
