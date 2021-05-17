@@ -108,6 +108,28 @@
             color: rgb(191,0,0);
         }
 
+        .page{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .page-before,.page-next{
+            border-width: 0;
+            background-color: white;
+            font-size: 30px;
+        }
+
+        .page-num{
+            margin: 0 10px;
+            background-color: black;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            color: white;
+        }
+
     </style>
 </head>
 
@@ -223,6 +245,12 @@
                     </div>
                 </li>
             </ul>
+
+            <div class="page">
+                <button class="page-before"  disabled="disabled" ><i class="fas fa-angle-left"></i></button>
+                <button class="page-num"  disabled="disabled" >1</button>
+                <button class="page-next"  disabled="disabled" ><i class="fas fa-angle-right"></i></button>
+            </div>
         </div>
     </div>
 
