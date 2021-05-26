@@ -13,192 +13,24 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="serch.css">
 
-
-    <style>
-        .accordion-item {
-            border: none;
-        }
-
-        .accordion-button {
-            background-color: rgb(237, 237, 237);
-            border-radius: none;
-        }
-
-        .accordion-button:not(.collapsed) {
-            color: black;
-            background-color: rgb(237, 237, 237);
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-
-        .serch-button li {
-            width: 100%;
-        }
-
-        .accordion-button {
-            border: none;
-        }
-
-        .serch-button button {
-            margin-top: 20px;
-            padding: 15px 8px;
-            border: none;
-            text-align: start;
-        }
-
-        .serch-button a {
-            display: block;
-            padding: 8px 0 8px 8px;
-            margin: 3px 0;
-            color: black;
-        }
-
-        .serch-button a:hover {
-            background-color: rgb(237, 237, 237);
-            color: rgb(191, 0, 0);
-        }
-
-        .check-item {
-            margin-top: 20px;
-            padding: 8px 0 8px 8px;
-            background-color: rgb(237, 237, 237);
-            align-items: center;
-        }
-
-        h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-
-        .serch-text h3 a {
-            text-decoration: none;
-        }
-
-        .serch-title {
-            font-weight: 700;
-            margin: 20px 0;
-        }
-
-        .serch-item {
-            display: table;
-            padding: 20px;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-        }
-
-        .serch-text a {
-            color: black;
-            text-decoration: underline;
-        }
-
-        .serch-text a:hover {
-            color: rgb(191, 0, 0);
-        }
-
-        .serch-img {
-            display: table-cell;
-            width: 200px;
-            padding-right: 30px;
-        }
-
-        .serch-img img {
-            width: 100%;
-        }
-
-        .serch-text {
-            vertical-align: top;
-            display: table-cell;
-            position: relative;
-        }
-
-        .series,
-        .writer {
-            margin: 10px 0;
-        }
-
-        .star-item {
-            margin: 15px 0;
-        }
-
-        .star-box5 .fa-star {
-            color: rgb(191, 0, 0);
-        }
-
-        .serch-summary {
-            word-break: break-all;
-            margin-top: 18px;
-        }
-
-        .serch-shop-price p {
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        .price {
-            font-size: 75%;
-        }
-
-        .page {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .page-before,
-        .page-next {
-            border-width: 0;
-            background-color: white;
-            font-size: 30px;
-        }
-
-        .page-num {
-            margin: 0 10px;
-            background-color: black;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            color: white;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="serch-title">
-        <div class="container">
-            <div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="serch-title">
                 <div>
-                    <p>
-                        <span>24439</span>
-                        條結果中的
-                        <span>1</span>
-                        -
-                        <span>12</span>
-                        條
-                        <span>結果</span>
-                        for “
-                        <span>為了n</span>
-                        ”
-                    </p>
+                    <h3>“為了n”</h3>
                 </div>
-
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      排序方式 : <span>暢銷書</span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">評價最高</a></li>
-                        <li><a class="dropdown-item" href="#">價格 : 低至高</a></li>
-                        <li><a class="dropdown-item" href="#">書名 : A 到 Z</a></li>
-                        <li><a class="dropdown-item" href="#">書名 : Z 到 A</a></li>
-                        <li><a class="dropdown-item" href="#">日期 : 最舊到最新</a></li>
-                        <li><a class="dropdown-item" href="#">日期 : 最新到最舊</a></li>
-                    </ul>
-                  </div>                
+                <div class="title-box">
+                    <div><a href="#" id="click">所有結果</a></div>
+                    <div><a href="#">書名</a></div>
+                    <div><a href="#">作者姓名</a></div>
+                    <div><a href="#">系列</a></div>
+                </div>
+                <div class="serch-border"></div>
             </div>
         </div>
     </div>
@@ -314,84 +146,112 @@
                     </div>
                 </div>
 
-                <ul class="col-12 col-lg-9">
-                    <li class="serch-item">
-                        <div class="serch-graphic">
-                            <div class="serch-img">
-                                <a href="#"><img src="serch圖片/出走，是為了回家.jpg" alt=""></a>
-                            </div>
-
-                            <div class="serch-text">
-                                <h3><a href="#">出走，是為了回家</a></h3>
-                                <div class="writer">
-                                    <p>由 <a href="#">劉安婷</a></p>
-                                </div>
-                                <div class="series">
-                                    <p>系列 <a href="#">心理勵志#</a></p>
-                                </div>
-                                <div class="serch-summary">
-                                    <span>一個頂著「資優生」光環、以全額獎學金進入美國名校的台灣女孩，卻被質疑「妳是怎麼考上普林斯頓的？」拚命想擠進「酷」朋友圈，卻遺落了最真心的友誼；初嚐戀愛滋味，卻在愛中失去自我；努力想在美國闖出一片天，卻發現自己終究不屬於異鄉；非洲迦納、美國監獄、海地、巴黎、柬埔寨、日內瓦……離開家鄉愈遠，回家的渴望愈強烈。　她的挫折，沒有少過，她的成長，充滿焦慮，她的人生路，也非一帆風順，她放棄美國人人稱羨的高薪工作，回到台灣投身偏鄉校育，走一條艱辛的路，她擁有的，只是勇氣。</span>
-                                    <span>......</span>
-                                    <span><a href="#">Read more</a></span>
-                                </div>
-                                <div class="star-item">
-                                    <div class="star-box5">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>(2)</span>
-                                    </div>
-                                </div>
-                                <div class="serch-shop">
-                                    <div class="serch-shop-price">
-                                        <p>NT$240 <span class="price">TWD</span></p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-12 col-lg-9">
+                    <div class="serch-result">
+                        <div class="result-item">
+                            <p>
+                                <span>24439</span>
+                                條結果中的
+                                <span>1</span>
+                                -
+                                <span>12</span>
+                                條
+                                <span>結果</span>
+                            </p>
                         </div>
-                    </li>
-
-                    <li class="serch-item">
-                        <div class="serch-graphic">
-                            <div class="serch-img">
-                                <a href="#"><img src="serch圖片/所有經歷，都是為了成就更好的你.jpg" alt=""></a>
-                            </div>
-
-                            <div class="serch-text">
-                                <h3><a href="#">所有經歷，都是為了成就更好的你</a></h3>
-                                <div class="writer">
-                                    <p>由 <a href="#">何權峰</a></p>
-                                </div>
-                                <div class="series">
-                                    <p>系列 <a href="#">生活勵志 #74</a></p>
-                                </div>
-                                <div class="serch-summary">
-                                    <span>最貼近人性的心靈作家何權峰潛心力作一本讓我們看見自己，了解自己，成就自己，祝福自己的必備指南。不曾經歷，怎會懂得；歷練之後，如同新生。我們一直以同樣的劇本、同樣的模式，在演同樣的人生。直到有一天，學會用新的思維、新的方式、新的態度，就能瞬間改寫劇本，過著全新的人生。所有經歷都在成就更好的你。你覺得迷茫徬徨就對了，你覺得絕望無助就對了，其實我們每個人都一樣，都是一邊跌倒，一邊含著淚奔跑；一邊受傷，一邊變得堅強，這些讓我們不斷成長的代價就是經驗。失敗不可怕，可怕的是失去勇氣和希望。失去愛人不可怕，可怕的是失去愛的能力。失意不可怕，可怕的是太在意失去而丟失了美好的自己。不要被一時的困頓打敗，堅守自己認為有價值的事，投入熱情，散播快樂，讓世界因你...
-                                    </span>
-                                    <span>......</span>
-                                    <span><a href="#">Read more</a></span>
-                                </div>
-                                <div class="star-item">
-                                    <div class="star-box5">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>(2)</span>
-                                    </div>
-                                </div>
-                                <div class="serch-shop">
-                                    <div class="serch-shop-price">
-                                        <p>NT$196 <span class="price">TWD</span></p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="dropdown">
+                            <button class="dropdown-button dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="dropdown-chose">排序方式 : <span class="menu-chose">暢銷書</span></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">暢銷書</a></li>
+                                <li><a class="dropdown-item" href="#">評價最高</a></li>
+                                <li><a class="dropdown-item" href="#">價格 : 低至高</a></li>
+                                <li><a class="dropdown-item" href="#">書名 : A 到 Z</a></li>
+                                <li><a class="dropdown-item" href="#">書名 : Z 到 A</a></li>
+                                <li><a class="dropdown-item" href="#">日期 : 最舊到最新</a></li>
+                                <li><a class="dropdown-item" href="#">日期 : 最新到最舊</a></li>
+                            </ul>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+
+                    <ul>
+                        <li class="serch-item">
+                            <div class="serch-graphic">
+                                <div class="serch-img">
+                                    <a href="#"><img src="serch圖片/出走，是為了回家.jpg" alt=""></a>
+                                </div>
+                                <div class="serch-text">
+                                    <h3><a href="#">出走，是為了回家</a></h3>
+                                    <div class="writer">
+                                        <h4>由 <a href="#">劉安婷</a></h4>
+                                    </div>
+                                    <div class="series">
+                                        <h5>系列 <a href="#">心理勵志#</a></h5>
+                                    </div>
+                                    <div class="serch-summary">
+                                        <span>一個頂著「資優生」光環、以全額獎學金進入美國名校的台灣女孩，卻被質疑「妳是怎麼考上普林斯頓的？」拚命想擠進「酷」朋友圈，卻遺落了最真心的友誼；初嚐戀愛滋味，卻在愛中失去自我；努力想在美國闖出一片天，卻發現自己終究不屬於異鄉；非洲迦納、美國監獄、海地、巴黎、柬埔寨、日內瓦……離開家鄉愈遠，回家的渴望愈強烈。　她的挫折，沒有少過，她的成長，充滿焦慮，她的人生路，也非一帆風順，她放棄美國人人稱羨的高薪工作，回到台灣投身偏鄉校育，走一條艱辛的路，她擁有的，只是勇氣。</span>
+                                        <span>......</span>
+                                        <span><a href="#">Read more</a></span>
+                                    </div>
+                                    <div class="star-item">
+                                        <div class="star-box5">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(2)</span>
+                                        </div>
+                                    </div>
+                                    <div class="serch-shop">
+                                        <div class="serch-shop-price">
+                                            <p>NT$240 <span class="price">TWD</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="serch-item">
+                            <div class="serch-graphic">
+                                <div class="serch-img">
+                                    <a href="#"><img src="serch圖片/所有經歷，都是為了成就更好的你.jpg" alt=""></a>
+                                </div>
+                                <div class="serch-text">
+                                    <h3><a href="#">所有經歷，都是為了成就更好的你</a></h3>
+                                    <div class="writer">
+                                        <h4>由 <a href="#">何權峰</a></h4>
+                                    </div>
+                                    <div class="series">
+                                        <h5>系列 <a href="#">生活勵志 #74</a></h5>
+                                    </div>
+                                    <div class="serch-summary">
+                                        <span>最貼近人性的心靈作家何權峰潛心力作一本讓我們看見自己，了解自己，成就自己，祝福自己的必備指南。不曾經歷，怎會懂得；歷練之後，如同新生。我們一直以同樣的劇本、同樣的模式，在演同樣的人生。直到有一天，學會用新的思維、新的方式、新的態度，就能瞬間改寫劇本，過著全新的人生。所有經歷都在成就更好的你。你覺得迷茫徬徨就對了，你覺得絕望無助就對了，其實我們每個人都一樣，都是一邊跌倒，一邊含著淚奔跑；一邊受傷，一邊變得堅強，這些讓我們不斷成長的代價就是經驗。失敗不可怕，可怕的是失去勇氣和希望。失去愛人不可怕，可怕的是失去愛的能力。失意不可怕，可怕的是太在意失去而丟失了美好的自己。不要被一時的困頓打敗，堅守自己認為有價值的事，投入熱情，散播快樂，讓世界因你...
+                                        </span>
+                                        <span>......</span>
+                                        <span><a href="#">Read more</a></span>
+                                    </div>
+                                    <div class="star-item">
+                                        <div class="star-box5">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(2)</span>
+                                        </div>
+                                    </div>
+                                    <div class="serch-shop">
+                                        <div class="serch-shop-price">
+                                            <p>NT$196 <span class="price">TWD</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="page">
